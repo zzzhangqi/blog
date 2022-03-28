@@ -1,7 +1,7 @@
 ---
 title: RPC远程调用浏览器函数
 date: 2021-10-09
-authors: kuizuo
+authors: Qi
 tags: [js, 浏览器, RPC]
 sticky: true
 ---

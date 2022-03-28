@@ -1,7 +1,7 @@
 ---
 title: 浏览器复制Console面板输出
 date: 2021-12-07
-authors: kuizuo
+authors: Qi
 tags: [js, 浏览器]
 ---
 
