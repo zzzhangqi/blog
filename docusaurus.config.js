@@ -13,9 +13,9 @@ const config = {
   themeConfig: {
     // announcementBar: {
     //   id: 'announcementBar-2', // Any value that will identify this message.
-    //   content: `代码能重写，人不能重来`,
+    //   content: ``,
     // },
-    metadata: [{ name: 'keywords', content: 'Blog, Linux, Docker, Kubernetes, Prometheus, Rancher, Kubernetnes, Zadig, 运维, 云原生, Cloud Native' }],
+    metadata: [{ name: 'keywords', content: 'Blog, Linux, Shell, Docker, Kubernetes, Prometheus, Rancher, Kubernetnes, Zadig, 运维, 云原生, Cloud Native' }],
     hideableSidebar: true,
     navbar: {
       title: 'Qi Zhang',
@@ -95,11 +95,6 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // editUrl: "https://github.com/kuizuo/kuizuo.cn/tree/master",
-          // remarkPlugins: [require("remark-math")],
-          // rehypePlugins: [require("rehype-katex")],
-          // showLastUpdateAuthor: true,
-          // showLastUpdateTime: true,
         },
         blog: {
           path: 'blog',
