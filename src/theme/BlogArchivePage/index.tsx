@@ -71,7 +71,7 @@ export default function BlogArchive({ archive }: Props) {
             <div className='col'>
               <div className='archive'>
                 <h2>
-                  <FontAwesomeIcon icon={faCalendar} color='#23affc' /> 归档
+                  <FontAwesomeIcon icon={faCalendar} color='#23affc' /> 所有文章
                 </h2>
                 <div className={styles.count}>总共 {archive.blogPosts.length} 篇文章</div>
                 {years.length > 0 && <YearsSection years={years} />}

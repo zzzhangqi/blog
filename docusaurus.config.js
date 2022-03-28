@@ -1,15 +1,8 @@
 // @ts-check
 const path = require('path')
-const beian = '闽ICP备2020017848号-2'
-const friendLinks = [
-  {
-    label: '峰华前端工程师',
-    to: 'https://zxuqian.cn/',
-  },
-]
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'SmallQ',
+  title: 'Qi Zhang',
   titleDelimiter: '-',
   url: 'https://smallq.cn',
   baseUrl: '/',
@@ -22,12 +15,12 @@ const config = {
     //   id: 'announcementBar-2', // Any value that will identify this message.
     //   content: `代码能重写，人不能重来`,
     // },
-    metadata: [{ name: 'keywords', content: 'blog, javascript, typescript, python ,node, react, vue, web, 前端, 后端, 愧怍' }],
+    metadata: [{ name: 'keywords', content: 'Blog, Linux, Docker, Kubernetes, Prometheus, Rancher, Kubernetnes, Zadig, 运维, 云原生, Cloud Native' }],
     hideableSidebar: true,
     navbar: {
-      title: 'SmallQ',
+      title: 'Qi Zhang',
       logo: {
-        alt: 'SmallQ',
+        alt: 'Qi Zhang',
         src: 'img/logo.png',
         srcDark: 'img/logo.png',
       },
@@ -38,20 +31,26 @@ const config = {
           position: 'right',
         },
         {
-          label: '归档',
+          label: '文章',
           to: 'archive',
           position: 'right',
         },
         {
-          label: '学习',
+          label: '笔记',
           position: 'right',
           items: [
             {
-              label: '技术笔记',
+              label: 'Docker',
               to: 'docs/skill/',
-            },
-          ],
+            }
+          ]
         },
+        {
+          href: 'https://github.com/zzzhangqi',
+          position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository'
+        }
       ],
     },
     algolia: {
@@ -61,52 +60,18 @@ const config = {
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: '学习',
-          items: [
-            {
-              label: '技术博客',
-              to: '/#homepage_blogs',
-            },
-            {
-              label: '技术笔记',
-              to: 'docs/skill',
-            },
-            {
-              label: '实战项目',
-              to: 'project',
-            },
-          ],
-        },
-        {
-          title: '社交媒体',
-          items: [
-            {
-              label: '首页',
-              to: '/',
-            },
-            {
-              label: '关于我',
-              to: '/about',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/kuizuo',
-            },
-            {
-              label: '掘金',
-              href: 'https://juejin.cn/user/1565318510545901',
-            },
-          ],
-        },
-        {
-          title: '友情链接',
-          items: friendLinks,
-        },
-      ],
-      copyright: `<p>Copyright © ${new Date().getFullYear()} 愧怍 Built with Docusaurus.</p><p><a href="http://beian.miit.gov.cn/" >${beian}</a>`,
-      //</p><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="/img/creative-commons-license-icon.png" /></a><br />本站所有内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh-Hans" >CC BY-NC 4.0 协议</a>，转载须注明署名和出处，且不可用于商业用途。若与其他同步平台协议冲突，以本网站为准。
+      // links: [
+      //   {
+      //     title: '学习',
+      //     items: [
+      //       {
+      //         label: '技术博客',
+      //         to: '/#homepage_blogs',
+      //       },
+      //     ],
+      //   },
+      // ],
+      copyright: `<p>Copyright © ${new Date().getFullYear()} Qi Zhang Built with Docusaurus.<a href="http://beian.miit.gov.cn/" >京ICP备2020036162号</a> | Powered by <a href="https://www.netlify.com">Netlify</a>`,
     },
     prism: {
       theme: require('prism-react-renderer/themes/github'),
@@ -144,11 +109,6 @@ const config = {
           postsPerPage: 10,
           // remarkPlugins: [require("remark-math")],
           // rehypePlugins: [require("rehype-katex")],
-          feedOptions: {
-            type: 'all',
-            title: '愧怍',
-            copyright: `Copyright © ${new Date().getFullYear()} 愧怍 Built with Docusaurus.<p><a href="http://beian.miit.gov.cn/" class="footer_lin">${beian}</a></p>`,
-          },
         },
         theme: {
           customCss: [require.resolve('./src/css/custom.css')],
