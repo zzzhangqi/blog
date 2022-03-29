@@ -7,7 +7,7 @@ export default function useViews(item) {
   const [views, setViews] = useState(0);
   const getViews = async () => {
     try {
-      const res = await fetch('https://blog.kuizuo.cn/posts/views', {
+      const res = await fetch('', {
         method: 'POST',
         body: JSON.stringify([title]),
         // mode: 'no-cors',
