@@ -15,7 +15,7 @@ const config = {
     //   id: 'announcementBar-2', // Any value that will identify this message.
     //   content: ``,
     // },
-    metadata: [{ name: 'keywords', content: 'Blog, Linux, Shell, Docker, Kubernetes, Prometheus, Rancher, Kubernetnes, Zadig, 运维, 云原生, Cloud Native' }],
+    metadata: [{ name: 'keywords', content: 'Blog, Linux, Shell, Docker, Kubernetes, Prometheus, Rancher, Kubernetnes, 运维, 云原生, Cloud Native' }],
     hideableSidebar: true,
     navbar: {
       title: 'Qi Zhang',

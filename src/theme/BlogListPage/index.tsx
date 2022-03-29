@@ -115,7 +115,7 @@ function BlogListPage(props) {
   return (
     <Layout title={title} description={description} wrapperClassName='blog-list__page'>
       <Head>
-        <meta name='keywords' content='blog, javascript, js, typescript, node, react, vue, web, 前端, 后端' />
+        <meta name='keywords' content='Blog, Linux, Shell, Docker, Kubernetes, Prometheus, Rancher, Kubernetnes, 运维, 云原生, Cloud Native' />
         <title>{title + suffix}</title>
       </Head>
       {!isPaginated && isBlogOnlyMode && <Hero />}
