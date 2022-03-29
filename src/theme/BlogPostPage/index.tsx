@@ -33,11 +33,11 @@ function BlogPostPage(props) {
 
   const labels = tags.length > 0 ? tags.map((t) => t.label) : ['Gitalk', title];
   const options = {
-    clientID: '3f390a6f6e979a76d1a1',
-    clientSecret: 'e2cd29b8055fcc2265b2292387236c36857e21fc',
+    clientID: 'e0329a751b17e19974a9',
+    clientSecret: '0dfdab9b44b6399daa3ca324ab4f067c1bf78b06',
     repo: 'blog',
-    owner: 'kuizuo',
-    admin: ['kuizuo'],
+    owner: 'zzzhangqi',
+    admin: ['zzzhangqi'],
     id: title,
     title: title,
     labels: labels,

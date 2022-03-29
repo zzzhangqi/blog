@@ -170,7 +170,7 @@ function Count({ title, ...post }) {
     <BrowserOnly fallback={<div></div>}>
       {() => {
         const addViewCount = async () => {
-          await fetch('', {
+          await fetch('https://blog.kuizuo.cn/posts/increase_view', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
