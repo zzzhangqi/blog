@@ -2,7 +2,7 @@
 const path = require('path')
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Qi Zhang',
+  title: 'Qi Zhang的博客',
   titleDelimiter: '-',
   url: 'https://smallq.cn',
   baseUrl: '/',
@@ -71,7 +71,7 @@ const config = {
       //     ],
       //   },
       // ],
-      copyright: `<p>Copyright © ${new Date().getFullYear()} Qi Zhang Built with Docusaurus.<a href="http://beian.miit.gov.cn/" >京ICP备2020036162号</a> | Powered by <a href="https://www.netlify.com">Netlify</a>`,
+      copyright: `<p>Copyright © ${new Date().getFullYear()} Qi Zhang Built with Docusaurus.<a href="http://beian.miit.gov.cn/" >京ICP备2020036162号</a>`,
     },
     prism: {
       theme: require('prism-react-renderer/themes/github'),

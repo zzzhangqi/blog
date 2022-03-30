@@ -13,7 +13,9 @@ import ThemeContext from '@theme/ThemeContext';
 import styles from './styles.module.css';
 import { MarkdownSection, StyledBlogItem } from './style';
 
-import Eye from '@site/static/icons/eye.svg';
+// import Eye from '@site/static/icons/eye.svg';
+import Eye from '@site/static/img/watch.svg';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTags, faEye } from '@fortawesome/free-solid-svg-icons';
 import BrowserOnly from '@docusaurus/BrowserOnly';
@@ -56,12 +58,12 @@ function BlogPostItem(props) {
             {!isBlogPostPage && readingTime && <> · {Math.ceil(readingTime)} min read</>}
             {isBlogPostPage && readingTime && <> · 预计阅读时间 {Math.ceil(readingTime)} 分钟</>}
           </time>
-          {isBlogPostPage && (
+          {/* {isBlogPostPage && (
             <span className='margin-left--sm' style={{ color: '#8c8c8c' }}>
               <FontAwesomeIcon icon={faEye} color='#c4d3e0' style={{ verticalAlign: 'middle', marginRight: '0.25rem' }} />
               <span style={{ fontSize: '0.9rem' }}>{views}</span>
             </span>
-          )}
+          )} */}
           {renderTags()}
         </div>
 
@@ -127,7 +129,7 @@ function BlogPostItem(props) {
       </Head>
 
       {/* 统计 */}
-      {isBlogPostPage && <Count title={title} />}
+      {/* {isBlogPostPage && <Count title={title} />} */}
       <div className={`row ${!isBlogPostPage ? 'blog-list--item' : ''}`} style={{ margin: '0px' }}>
         <div className={`col ${isBlogPostPage ? `col--12 article__details` : `col--12`}`}>
           {/* 博文部分 */}
@@ -148,7 +150,7 @@ function BlogPostItem(props) {
             )}
             {!isBlogPostPage && (
               <span className='footer__read_count'>
-                <Eye className='footer__eye' style={{ verticalAlign: 'middle' }} /> {views}
+                <Eye className='footer__eye' style={{ verticalAlign: 'middle', width: '100px', height: '100px'}} /> {/* {views} */}
               </span>
             )}
             {truncated && (
@@ -165,27 +167,27 @@ function BlogPostItem(props) {
   );
 }
 
-function Count({ title, ...post }) {
-  return (
-    <BrowserOnly fallback={<div></div>}>
-      {() => {
-        const addViewCount = async () => {
-          await fetch('https://blog.kuizuo.cn/posts/increase_view', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ title }),
-          });
-        };
+// function Count({ title, ...post }) {
+//   return (
+//     <BrowserOnly fallback={<div></div>}>
+//       {() => {
+//         const addViewCount = async () => {
+//           await fetch('https://blog.kuizuo.cn/posts/increase_view', {
+//             method: 'POST',
+//             headers: {
+//               'Content-Type': 'application/json',
+//             },
+//             body: JSON.stringify({ title }),
+//           });
+//         };
 
-        useEffect(() => {
-          addViewCount();
-        }, []);
-        return <></>;
-      }}
-    </BrowserOnly>
-  );
-}
+//         useEffect(() => {
+//           addViewCount();
+//         }, []);
+//         return <></>;
+//       }}
+//     </BrowserOnly>
+//   );
+// }
 
 export default BlogPostItem;

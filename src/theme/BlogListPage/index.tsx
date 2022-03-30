@@ -32,7 +32,7 @@ function BlogListPage(props) {
 
   let title = siteTitle + '';
   let suffix = '';
-  let description = `html, css, javascript, react, vue, node, typescript，前端开发，后端开发，技术分享，开源`;
+  let description = `Blog, Linux, Shell, Docker, Kubernetes, Prometheus, Rancher, Kubernetnes, 运维, 云原生, Cloud Native`;
 
   const isBlogPage = metadata.permalink === '/';
   const views = useViews(items);
