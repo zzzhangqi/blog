@@ -38,12 +38,7 @@ const config = {
         {
           label: '笔记',
           position: 'right',
-          items: [
-            {
-              label: 'Docker',
-              to: 'docs/skill/',
-            }
-          ]
+          to: 'docs/'
         },
         {
           href: 'https://github.com/zzzhangqi',
