@@ -30,6 +30,11 @@ rpm -e mariadb-libs-5.5.65-1.el7.x86_64 --nodeps
 
 ### 1.3 安装Mysql
 
+:::danger
+如果出现mysql-community-client-8.0.28-1.el7.x86_64.rpm 的公钥尚未安装
+在安装之前执行 rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
+:::
+
 ```shell
 yum -y install mysql-server
 ```
