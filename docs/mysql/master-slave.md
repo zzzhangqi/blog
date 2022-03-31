@@ -62,8 +62,8 @@ alter user 'root'@'localhost' identified by 'xxx';
 
 ```shell
 update mysql.user set host = '%' where user = 'root';
-alter user 'root'@'%' identified with mysql_native_password by 'xxx';
 alter user 'root'@'%' identified by 'xxx' password expire never;
+alter user 'root'@'%' identified with mysql_native_password by 'xxx';
 flush privileges;
 ```
 

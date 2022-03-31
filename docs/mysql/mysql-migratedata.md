@@ -34,7 +34,9 @@ mysqldump -h 127.0.0.1 -u root -p \
 
 ```shell
 mysqldump -h 127.0.0.1 -u root -p \
---opt --default-character-set=utf8 --hex-blob <自建数据库名> -R | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' > /tmp/<自建数据库名>Trigger.sql
+--opt --default-character-set=utf8 --hex-blob <自建数据库名> \
+-R | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' > \
+/tmp/<自建数据库名>Trigger.sql
 ```
 
 :::caution
@@ -47,9 +49,9 @@ mysqldump -h 127.0.0.1 -u root -p \
 
 将导出的文件导入到目标RDS中，命令如下：
 
-```javascript
-mysql -h <RDS实例连接地址> -P <RDS实例端口> -u <RDS实例账号> -p <RDS数据库名称> < /tmp/<自建数据库名>.sql
-mysql -h <RDS实例连接地址> -P <RDS实例端口> -u <RDS实例账号> -p <RDS数据库名称> < /tmp/<自建数据库名>Trigger.sql
+```shell
+mysql -h {连接地址} -P {端口} -u {账号} -p {数据库名称} < /tmp/{自建数据库名}.sql
+mysql -h {连接地址} -P {端口} -u {账号} -p {数据库名称} < /tmp/{自建数据库名}Trigger.sql
 ```
 
 ## 常见问题
