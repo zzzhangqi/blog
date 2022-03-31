@@ -8,11 +8,9 @@ keywords:
 
 使用mysqldump工具的优点是简单易用、容易上手，缺点是停机时间较长，因此它适用于数据量不大，或者允许停机的时间较长的情况。
 
-## 注意事项
-
-**说明**
-
-- **lower_case_table_names**参数设置为0后，务必不要再次设置为1，否则可能导致`ERROR 1146 (42S02): Table doesn't exist`错误，对业务造成严重影响。
+:::caution
+**lower_case_table_names**参数设置为0后，务必不要再次设置为1，否则可能导致`ERROR 1146 (42S02): Table doesn't exist`错误，对业务造成严重影响。
+:::
 
 ## 操作步骤
 
@@ -27,25 +25,16 @@ keywords:
 在Linux命令行下导出自建数据库的数据，命令如下：
 
 ```shell
-mysqldump -h 127.0.0.1 -u root -p --opt --default-character-set=utf8 --hex-blob <自建数据库名> --skip-triggers --skip-lock-tables > /tmp/<自建数据库名>.sql
-```
-
-**示例**
-
-```shell
-mysqldump -h 127.0.0.1 -u root -p --opt --default-character-set=utf8 --hex-blob testdb --skip-triggers --skip-lock-tables > /tmp/testdb.sql
+mysqldump -h 127.0.0.1 -u root -p \
+--opt --default-character-set=utf8 --hex-blob <自建数据库名> \
+--skip-triggers --skip-lock-tables > /tmp/<自建数据库名>.sql
 ```
 
 在Linux命令行下导出存储过程、触发器和函数，命令如下：
 
 ```shell
-mysqldump -h 127.0.0.1 -u root -p --opt --default-character-set=utf8 --hex-blob <自建数据库名> -R | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' > /tmp/<自建数据库名>Trigger.sql
-```
-
-**示例**
-
-```shell
-mysqldump -h 127.0.0.1 -u root -p --opt --default-character-set=utf8 --hex-blob testdb -R | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' > /tmp/testdbTrigger.sql
+mysqldump -h 127.0.0.1 -u root -p \
+--opt --default-character-set=utf8 --hex-blob <自建数据库名> -R | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' > /tmp/<自建数据库名>Trigger.sql
 ```
 
 :::caution
@@ -62,15 +51,6 @@ mysqldump -h 127.0.0.1 -u root -p --opt --default-character-set=utf8 --hex-blob 
 mysql -h <RDS实例连接地址> -P <RDS实例端口> -u <RDS实例账号> -p <RDS数据库名称> < /tmp/<自建数据库名>.sql
 mysql -h <RDS实例连接地址> -P <RDS实例端口> -u <RDS实例账号> -p <RDS数据库名称> < /tmp/<自建数据库名>Trigger.sql
 ```
-
-示例
-
-```javascript
-mysql -h rm-bpxxxxx.mysql.rds.aliyuncs.com -P 3306 -u testuser -p testdb  < /tmp/testdb.sql
-mysql -h rm-bpxxxxx.mysql.rds.aliyuncs.com -P 3306 -u testuser -p testdb  < /tmp/testdbTrigger.sql
-```
-
-1. 导入成功后登录RDS实例数据库中查看数据是否正常。具体操作，请参见[通过DMS登录RDS数据库](https://help.aliyun.com/document_detail/96161.htm#concept-cml-x4v-ydb)。
 
 ## 常见问题
 
