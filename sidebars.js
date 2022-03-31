@@ -10,7 +10,8 @@ module.exports = {
       label: 'Mysql',
       items: [
         'mysql/master-slave',
-        'mysql/mysql-backup'
+        'mysql/mysql-backup',
+        'mysql/mysql-migratedata'
       ],
     },
   ]
