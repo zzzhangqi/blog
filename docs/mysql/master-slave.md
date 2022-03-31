@@ -1,5 +1,5 @@
 ---
-title: Mysql 8.0部署主从
+title: 部署Mysql 8.0主从集群
 keywords:
   - Mysql
   - Mysql主从

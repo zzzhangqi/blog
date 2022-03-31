@@ -1,5 +1,5 @@
 ---
-title: 使用Mysqldump迁移MySQL数据
+title: 使用MysqlDump迁移MySQL数据
 keywords:
   - Mysql
   - Mysql数据迁移
