@@ -4,9 +4,8 @@ import { useTrail, animated } from 'react-spring'
 import Translate, { translate } from '@docusaurus/Translate'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import Link from '@docusaurus/Link'
-
-import HeroMain from './img/hero_main.svg'
-
+import HeroLight from './img/hero_light.svg'
+import HeroDark from './img/hero_dark.svg'
 import GithubIcon from '@site/static/icons/github.svg'
 import JuejinIcon from '@site/static/icons/juejin.svg'
 import RssIcon from '@site/static/icons/rss.svg'
@@ -14,11 +13,10 @@ import QqIcon from '@site/static/icons/qq.svg'
 import WxIcon from '@site/static/icons/wx.svg'
 import CsdnIcon from '@site/static/icons/csdn.svg'
 import CloudMusicIcon from '@site/static/icons/cloud-music.svg'
-
 import useBaseUrl from '@docusaurus/useBaseUrl'
 import Button from '../Button'
-
 import styles from './styles.module.css'
+import {useColorMode} from '@docusaurus/theme-common';
 
 function Hero() {
   const {
@@ -86,9 +84,12 @@ function SocialLinks({ animatedProps, ...props }) {
 }
 
 function HeroMainImage() {
+    const {colorMode} = useColorMode();
+
   return (
     <div className={styles.bloghome__image}>
-      <HeroMain />
+      { colorMode === 'light' ? <HeroLight/> : null}
+      { colorMode === 'dark' ? <HeroDark/> : null}
     </div>
   )
 }
