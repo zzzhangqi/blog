@@ -1,5 +1,6 @@
 ---
 title: Mysql定时备份
+description:  Mysql 定时备份数据
 keywords:
   - Mysql定时备份
   - 数据库定时备份

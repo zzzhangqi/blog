@@ -8,7 +8,7 @@ import MDXComponents from '@theme/MDXComponents';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-import ThemeContext from '@theme/ThemeContext';
+import {useColorMode} from '@docusaurus/theme-common';
 
 import styles from './styles.module.css';
 import { MarkdownSection, StyledBlogItem } from './style';
@@ -35,8 +35,7 @@ function BlogPostItem(props) {
   const { slug: postId, title, image } = frontMatter;
   const imageUrl = useBaseUrl(image, { absolute: true });
   // 是否为黑暗主题：
-  const theme = useContext(ThemeContext);
-  const { isDarkTheme } = theme;
+  const {colorMode, setColorMode} = useColorMode();
 
   const renderPostHeader = () => {
     const TitleHeading = isBlogPostPage ? 'h1' : 'h2';
@@ -118,7 +117,7 @@ function BlogPostItem(props) {
 
   return (
     <StyledBlogItem
-      isDark={isDarkTheme}
+      isDark={colorMode}
       isBlogPostPage={isBlogPostPage}
       // className={isBlogPostPage ? "margin-top--xl" : ""}
     >
@@ -137,7 +136,7 @@ function BlogPostItem(props) {
             {/* 标题 */}
             {renderPostHeader()}
             {/* 正文 */}
-            <MarkdownSection isBlogPostPage={isBlogPostPage} isDark={isDarkTheme} className='markdown'>
+            <MarkdownSection isBlogPostPage={isBlogPostPage} isDark={colorMode} className='markdown'>
               <MDXProvider components={MDXComponents}>{children}</MDXProvider>
             </MarkdownSection>
           </article>

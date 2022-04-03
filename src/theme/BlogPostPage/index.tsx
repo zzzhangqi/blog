@@ -1,5 +1,5 @@
 import React from 'react';
-import Seo from '@theme/Seo';
+// import Seo from '@theme/Seo';
 import BlogLayout from '@theme/BlogLayout';
 import BlogPostItem from '@theme/BlogPostItem';
 import BlogPostPaginator from '@theme/BlogPostPaginator';
@@ -7,7 +7,7 @@ import BackToTopButton from '@theme/BackToTopButton';
 import { ThemeClassNames } from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import TOC from '@theme/TOC';
-
+import Head from '@docusaurus/Head';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import 'gitalk/dist/gitalk.css';
 import GitalkComponent from 'gitalk/dist/gitalk-component';
@@ -56,9 +56,16 @@ function BlogPostPage(props) {
           <TOC toc={BlogPostContents.toc} minHeadingLevel={tocMinHeadingLevel} maxHeadingLevel={tocMaxHeadingLevel} />
         ) : undefined
       }
+      title={title} description={description}
     >
       <BackToTopButton />
-      <Seo
+      <Head>
+        <meta name="keywords" content={keywords} />
+        <meta property='og:type' content='article' />
+        <meta property='article:published_time' content={date} />
+        <meta property="og:image" content={image} />
+      </Head>
+      {/* <Seo
         // TODO refactor needed: it's a bit annoying but Seo MUST be inside BlogLayout
         // otherwise  default image (set by BlogLayout) would shadow the custom blog post image
         title={title}
@@ -67,10 +74,10 @@ function BlogPostPage(props) {
         image={image}
       >
         <meta property='og:type' content='article' />
-        <meta property='article:published_time' content={date} />
+        <meta property='article:published_time' content={date} /> */}
 
         {/* TODO double check those article metas array syntaxes, see https://ogp.me/#array */}
-        {authors.some((author) => author.url) && (
+        {/* {authors.some((author) => author.url) && (
           <meta
             property='article:author'
             content={authors
@@ -80,7 +87,7 @@ function BlogPostPage(props) {
           />
         )}
         {tags.length > 0 && <meta property='article:tag' content={tags.map((tag) => tag.label).join(',')} />}
-      </Seo>
+      </Seo> */}
 
       <BlogPostItem frontMatter={frontMatter} assets={assets} metadata={metadata} isBlogPostPage > {/* views={views}> */}
         <BlogPostContents />

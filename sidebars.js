@@ -14,5 +14,12 @@ module.exports = {
         'mysql/mysql-migratedata'
       ],
     },
+    {
+      type: 'category',
+      label: 'Gitlab',
+      items: [
+        'gitlab/gitlab-ResetPassword',
+      ],
+    },
   ]
 }
