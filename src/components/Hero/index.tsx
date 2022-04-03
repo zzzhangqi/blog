@@ -19,6 +19,7 @@ import styles from './styles.module.css'
 import {useColorMode} from '@docusaurus/theme-common';
 
 function Hero() {
+  const {colorMode} = useColorMode();
   const {
     // 当前语言
     i18n: { currentLocale },
@@ -68,7 +69,10 @@ function Hero() {
           </animated.div>
         }
       </div>
-      <HeroMainImage />
+      <animated.div style={animatedTexts[2]} className={styles.bloghome__image}>
+        { colorMode === 'light' ? <HeroLight/> : null}
+        { colorMode === 'dark' ? <HeroDark/> : null}
+      </animated.div >
     </animated.div>
   )
 }
@@ -83,15 +87,5 @@ function SocialLinks({ animatedProps, ...props }) {
   )
 }
 
-function HeroMainImage() {
-    const {colorMode} = useColorMode();
-
-  return (
-    <div className={styles.bloghome__image}>
-      { colorMode === 'light' ? <HeroLight/> : null}
-      { colorMode === 'dark' ? <HeroDark/> : null}
-    </div>
-  )
-}
 
 export default Hero
