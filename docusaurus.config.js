@@ -66,7 +66,7 @@ const config = {
       //     ],
       //   },
       // ],
-      copyright: `<p>Copyright © ${new Date().getFullYear()} Qi Zhang Built with Docusaurus.<a href="http://beian.miit.gov.cn/" >京ICP备2020036162号</a>`,
+      copyright: `<p>Copyright © ${new Date().getFullYear()} Qi Zhang Built with Docusaurus.<a href="http://beian.miit.gov.cn/" target="_blank" >京ICP备2020036162号</a> | <a href="https://icp.gov.moe/?keyword=20221221" target="_blank">萌ICP备20221221号</a>`,
     },
     prism: {
       theme: require('prism-react-renderer/themes/github'),
