@@ -4,17 +4,52 @@ import BlogLayout from '@theme/BlogLayout';
 import BlogPostItem from '@theme/BlogPostItem';
 import BlogPostPaginator from '@theme/BlogPostPaginator';
 import BackToTopButton from '@theme/BackToTopButton';
-import { ThemeClassNames } from '@docusaurus/theme-common';
+import { ThemeClassNames,PageMetadata,HtmlClassNameProvider} from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import TOC from '@theme/TOC';
 import Head from '@docusaurus/Head';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import 'gitalk/dist/gitalk.css';
 import GitalkComponent from 'gitalk/dist/gitalk-component';
-
+import type {Props} from '@theme/BlogPostPage';
+import clsx from 'clsx';
 // import useViews from './useViews';
 
-function BlogPostPage(props) {
+function BlogPostPageMetadata(props: Props): JSX.Element {
+  const {content: BlogPostContents} = props;
+  const {assets, metadata} = BlogPostContents;
+  const {title, description, date, tags, authors, frontMatter} = metadata;
+  const {keywords} = frontMatter;
+  const image = assets.image ?? frontMatter.image;
+  return (
+    <PageMetadata
+      title={title}
+      description={description}
+      keywords={keywords}
+      image={image}>
+      <meta property="og:type" content="article" />
+      <meta property="article:published_time" content={date} />
+      {/* TODO double check those article meta array syntaxes, see https://ogp.me/#array */}
+      {authors.some((author) => author.url) && (
+        <meta
+          property="article:author"
+          content={authors
+            .map((author) => author.url)
+            .filter(Boolean)
+            .join(',')}
+        />
+      )}
+      {tags.length > 0 && (
+        <meta
+          property="article:tag"
+          content={tags.map((tag) => tag.label).join(',')}
+        />
+      )}
+    </PageMetadata>
+  );
+}
+
+function BlogPostPageContent(props) {
   const { content: BlogPostContents, sidebar } = props;
   const {
     // TODO this frontmatter is not validated/normalized, it's the raw user-provided one. We should expose normalized one too!
@@ -59,35 +94,7 @@ function BlogPostPage(props) {
       title={title} description={description}
     >
       <BackToTopButton />
-      <Head>
-        <meta name="keywords" content={keywords} />
-        <meta property='og:type' content='article' />
-        <meta property='article:published_time' content={date} />
-        <meta property="og:image" content={image} />
-      </Head>
-      {/* <Seo
-        // TODO refactor needed: it's a bit annoying but Seo MUST be inside BlogLayout
-        // otherwise  default image (set by BlogLayout) would shadow the custom blog post image
-        title={title}
-        description={description}
-        keywords={keywords}
-        image={image}
-      >
-        <meta property='og:type' content='article' />
-        <meta property='article:published_time' content={date} /> */}
 
-        {/* TODO double check those article metas array syntaxes, see https://ogp.me/#array */}
-        {/* {authors.some((author) => author.url) && (
-          <meta
-            property='article:author'
-            content={authors
-              .map((author) => author.url)
-              .filter(Boolean)
-              .join(',')}
-          />
-        )}
-        {tags.length > 0 && <meta property='article:tag' content={tags.map((tag) => tag.label).join(',')} />}
-      </Seo> */}
 
       <BlogPostItem frontMatter={frontMatter} assets={assets} metadata={metadata} isBlogPostPage > {/* views={views}> */}
         <BlogPostContents />
@@ -99,4 +106,15 @@ function BlogPostPage(props) {
   );
 }
 
-export default BlogPostPage;
+export default function BlogPostPage(props: Props): JSX.Element {
+  return (
+    <HtmlClassNameProvider
+      className={clsx(
+        ThemeClassNames.wrapper.blogPages,
+        ThemeClassNames.page.blogPostPage,
+      )}>
+      <BlogPostPageMetadata {...props} />
+      <BlogPostPageContent {...props} />
+    </HtmlClassNameProvider>
+  );
+}

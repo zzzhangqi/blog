@@ -21,5 +21,12 @@ module.exports = {
         'gitlab/gitlab-ResetPassword',
       ],
     },
+    {
+      type: 'category',
+      label: 'Linux',
+      items: [
+        'linux/install-nfs',
+      ],
+    },
   ]
 }
