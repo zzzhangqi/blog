@@ -17,6 +17,7 @@ const config = {
     // },
     metadata: [{ name: 'keywords', content: 'Blog, Linux, Shell, Docker, Kubernetes, Prometheus, Rancher, Kubernetnes, 运维, 云原生, Cloud Native' }],
     hideableSidebar: true,
+    respectPrefersColorScheme: true,
     navbar: {
       title: 'Qi Zhang',
       logo: {
