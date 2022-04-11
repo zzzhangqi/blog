@@ -2,9 +2,7 @@
 title: 使用MysqlDump迁移MySQL数据
 description: 使用MysqlDump迁移MySQL数据
 keywords:
-  - Mysql
-  - Mysql数据迁移
-  - Mysqldump
+  - Mysqldump迁移数据
 ---
 
 使用mysqldump工具的优点是简单易用、容易上手，缺点是停机时间较长，因此它适用于数据量不大，或者允许停机的时间较长的情况。

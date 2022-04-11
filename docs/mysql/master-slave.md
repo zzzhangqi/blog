@@ -2,11 +2,8 @@
 title: 部署Mysql 8.0主从集群
 description: 在Linux上搭建 Mysql 8.0主从集群
 keywords:
-  - Mysql
-  - Mysql主从
-  - 主从数据库
-  - 搭建教程
-
+  - Mysql主从数据库
+  - 搭建主从数据库教程
 ---
 
 

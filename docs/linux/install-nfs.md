@@ -1,5 +1,5 @@
 ---
-title: 在Linux上安装 NFS-Service
+title: 在Linux上安装 NFS-Server
 description: 在Linux上安装NFS-Server
 keywords:
   - NFS
