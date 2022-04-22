@@ -11,7 +11,11 @@ keywords:
 - 在集群每一个节点安装`nfs-utils`
 
 ```bash
+# centos
 yum install -y nfs-utils
+
+# ubuntu
+apt -y install nfs-kernel-server
 ```
 
 ## 配置nfs-server
@@ -77,5 +81,4 @@ $ showmount -e <NFS服务器IP地址>
 Exports list on <NFS服务器IP地址>:
 /data
 ```
-
 
