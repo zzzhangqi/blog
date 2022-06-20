@@ -14,7 +14,7 @@ keywords:
 * 编辑或者新建 `/etc/rancher/k3s/config.yaml`
 
 ```yaml
-kubelet-arg
+kubelet-arg:
   - "eviction-hard=memory.available<500Mi,nodefs.available<5%"
 ```
 
