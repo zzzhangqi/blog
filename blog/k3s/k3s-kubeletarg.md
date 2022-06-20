@@ -31,3 +31,5 @@ kubelet-arg
 `K3s kubelet arg`文档：https://docs.rancher.cn/docs/k3s/installation/install-options/server-config/_index#kubernetes-%E8%BF%9B%E7%A8%8B%E5%AE%9A%E5%88%B6%E6%A0%87%E5%BF%97
 
 K3s Github issue 参考：https://github.com/k3s-io/k3s/issues/5488
+
+K8S 文档参考`节点压力驱逐`：https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/node-pressure-eviction/
