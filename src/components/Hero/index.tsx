@@ -37,7 +37,10 @@ function Hero() {
   })
 
   return (
-    <animated.div className={styles.hero}>
+    <animated.div className={styles.hero} style={{
+      background: `url("/img/background.png")`,
+      backgroundSize: "100%",
+    }}>
       <div className={styles.bloghome__intro}>
         <animated.div style={animatedTexts[0]} className={styles.hero_text}>
           <Translate description='hero greet'>Hello! I'm </Translate>
