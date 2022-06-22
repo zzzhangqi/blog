@@ -1,0 +1,31 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.navbarHideable {
+  transition: transform var(--ifm-transition-fast) ease;
+}
+
+.navbarHidden {
+  transform: translate3d(0, calc(-100% - 2px), 0);
+}
+.navbar {
+  --ifm-navbar-padding-vertical: 0;
+  --ifm-navbar-padding-horizontal: 0;
+  --ukraine-yellow: rgb(44, 86, 54);
+  --ukraine-blue: rgba(44, 134, 54, 1);
+  background: linear-gradient(
+    0,
+    var(--ukraine-yellow),
+    var(--ukraine-yellow) 50%,
+    var(--ukraine-blue) 50%,
+    var(--ukraine-blue) 100%
+  );
+}
+[data-theme="dark"] .navbar {
+  --ukraine-yellow: rgb(103, 131, 255, 1);
+  --ukraine-blue: rgba(128, 183, 255, 1);
+}

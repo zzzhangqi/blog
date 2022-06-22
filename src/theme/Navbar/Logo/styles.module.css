@@ -1,0 +1,6 @@
+.navbarLogo {
+  margin-left: 1.5rem;
+}
+.navbarLogo > img {
+  border-radius: 50%;
+}
