@@ -56,17 +56,55 @@ const config = {
     },
     footer: {
       style: 'dark',
-      // links: [
-      //   {
-      //     title: '学习',
-      //     items: [
-      //       {
-      //         label: '技术博客',
-      //         to: '/#homepage_blogs',
-      //       },
-      //     ],
-      //   },
-      // ],
+      links: [
+        {
+          title: '文章标签',
+          items: [
+            {
+              label: '所有标签',
+              to: '/tags',
+            },
+            {
+              label: 'Kubernetes',
+              to: '/tags/kubernetes',
+            },
+            {
+              label: 'Traefik',
+              to: '/tags/traefik',
+            },
+          ],
+        },
+        {
+          title: '笔记',
+          items: [
+            {
+              label: 'Mysql',
+              to: '/docs/mysql/',
+            },
+            {
+              label: 'GitLab',
+              to: '/docs/gitlab/',
+            },
+            {
+              label: 'Linux',
+              to: '/docs/linux/',
+            },
+          ],
+        },
+        {
+          title: '联系我',
+          items: [
+            {
+              label: 'Github',
+              to: 'https://github.com/zzzhangqi',
+            },
+            {
+              label: '邮箱(smallqi1@163.com)',
+              to: '#',
+            },
+          ],
+        },
+      ],
       copyright: `<p>Copyright © ${new Date().getFullYear()} Qi Zhang Built with Docusaurus.<a href="http://beian.miit.gov.cn/" target="_blank" >京ICP备2020036162号</a> | <a href="https://icp.gov.moe/?keyword=20221221" target="_blank">萌ICP备20221221号</a>`,
     },
     prism: {
