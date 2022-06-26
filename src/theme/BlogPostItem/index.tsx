@@ -57,12 +57,12 @@ function BlogPostItem(props) {
             {!isBlogPostPage && readingTime && <> · {Math.ceil(readingTime)} min read</>}
             {isBlogPostPage && readingTime && <> · 预计阅读时间 {Math.ceil(readingTime)} 分钟</>}
           </time>
-          {/* {isBlogPostPage && (
+          {isBlogPostPage && (
             <span className='margin-left--sm' style={{ color: '#8c8c8c' }}>
               <FontAwesomeIcon icon={faEye} color='#c4d3e0' style={{ verticalAlign: 'middle', marginRight: '0.25rem' }} />
-              <span style={{ fontSize: '0.9rem' }}>{views}</span>
+              <span style={{ fontSize: '0.9rem' }}><Count/></span>
             </span>
-          )} */}
+          )}
           {renderTags()}
         </div>
 
@@ -166,27 +166,24 @@ function BlogPostItem(props) {
   );
 }
 
-// function Count({ title, ...post }) {
-//   return (
-//     <BrowserOnly fallback={<div></div>}>
-//       {() => {
-//         const addViewCount = async () => {
-//           await fetch('https://blog.kuizuo.cn/posts/increase_view', {
-//             method: 'POST',
-//             headers: {
-//               'Content-Type': 'application/json',
-//             },
-//             body: JSON.stringify({ title }),
-//           });
-//         };
+function Count() {
+  const initScript = () => {
+    let script = document.createElement('script')
+    script.type = 'text/javascript'
+    script.async = true
+    script.src = 'https://busuanzi.smallq.cn/js'
+    document.head.appendChild(script)
+  }
 
-//         useEffect(() => {
-//           addViewCount();
-//         }, []);
-//         return <></>;
-//       }}
-//     </BrowserOnly>
-//   );
-// }
+  useEffect(() => {
+    initScript()
+  }, [])
+
+  return (
+    <>
+      <span id="busuanzi_page_pv"></span>
+    </>
+  );
+}
 
 export default BlogPostItem;
